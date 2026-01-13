@@ -1,10 +1,10 @@
 export default function App() {
   return (
     <div className="app">
-      <h1>Catatan Belanjaku 📝</h1>
+      <Header />
       <form className="add-form">
         <h3>Hari ini belanja apa kita?</h3>
-        <div>
+        <div className="form-row">
           <select>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -13,14 +13,14 @@ export default function App() {
             <option value="5">5</option>
           </select>
           <input type="text" placeholder="nama barang..." />
+          <button type="button">Tambah</button>
         </div>
-        <button>Tambah</button>
       </form>
       <div className="list">
         <ul>
           <li>
             <input type="checkbox" defaultChecked />
-            <span style={{ textDecoration: "line-through" }}>1 Kopi</span>
+            <span>1 Kopi</span>
             <button>&times;</button>
           </li>
           <li>
@@ -48,4 +48,8 @@ export default function App() {
       </footer>
     </div>
   );
+}
+
+function Header() {
+  return <h1>Catatan Belanjaku 📝</h1>;
 }
