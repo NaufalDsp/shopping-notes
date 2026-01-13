@@ -58,13 +58,7 @@ function GroceryList() {
       <div className="list">
         <ul>
           {groceryItems.map((item) => (
-            <li key={item.id}>
-              <input type="checkbox" />
-              <span>
-                {item.quantity} {item.name}
-              </span>
-              <button>&times;</button>
-            </li>
+            <Item item={item} key={item.id} />
           ))}
         </ul>
       </div>
@@ -77,6 +71,18 @@ function GroceryList() {
         <button>Bersihkan Daftar</button>
       </div>
     </>
+  );
+}
+
+function Item({ item }: { item: (typeof groceryItems)[0] }) {
+  return (
+    <li key={item.id}>
+      <input type="checkbox" checked={item.checked} />
+      <span style={item.checked ? { textDecoration: "line-through" } : {}}>
+        {item.quantity} {item.name}
+      </span>
+      <button>&times;</button>
+    </li>
   );
 }
 function Footer() {
