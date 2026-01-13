@@ -1,12 +1,30 @@
+const groceryItems = [
+  {
+    id: 1,
+    name: "Kopi Bubuk",
+    quantity: 2,
+    checked: true,
+  },
+  {
+    id: 2,
+    name: "Gula Pasir",
+    quantity: 5,
+    checked: false,
+  },
+  {
+    id: 3,
+    name: "Air Mineral",
+    quantity: 3,
+    checked: false,
+  },
+];
 export default function App() {
   return (
     <div className="app">
       <Header />
       <Form />
       <GroceryList />
-      <footer className="stats">
-        Ada 10 barang di daftar belanjaan, 5 barang sudah dibeli (50%)
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -65,5 +83,12 @@ function GroceryList() {
         <button>Bersihkan Daftar</button>
       </div>
     </>
+  );
+}
+function Footer() {
+  return (
+    <footer className="stats">
+      Ada 10 barang di daftar belanjaan, 5 barang sudah dibeli (50%)
+    </footer>
   );
 }
