@@ -34,17 +34,17 @@ function Header() {
 }
 
 function Form() {
+  const quantityNum = [...Array(20)].map((_, i) => (
+    <option value={i + 1} key={i + 1}>
+      {i + 1}
+    </option>
+  ));
+
   return (
     <form className="add-form">
       <h3>Hari ini belanja apa kita?</h3>
       <div className="form-row">
-        <select>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <select>{quantityNum}</select>
         <input type="text" placeholder="nama barang..." />
         <button type="button">Tambah</button>
       </div>
